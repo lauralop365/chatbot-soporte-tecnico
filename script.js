@@ -4,6 +4,46 @@ let paso = 0;
 let historial = [];
 let esperandoRespuesta = false;
 
+function mostrarMenu(){
+
+    let chat = document.getElementById("chat");
+
+    chat.innerHTML += `
+    <div class="bot">
+        <strong>Chatbot:</strong><br><br>
+
+        👋 ¡Bienvenido al Chatbot de Soporte Técnico!<br><br>
+
+        Soy un asistente virtual del Telebachillerato Comunitario Núm. 29.<br><br>
+
+        Selecciona una opción:
+    </div>
+
+    <div class="menu">
+
+        <button onclick="respuestaBoton('institucion')">🏫 Conocer la institución</button>
+
+        <button onclick="respuestaBoton('equipo')">💻 Problemas con mi equipo</button>
+
+        <button onclick="respuestaBoton('internet')">🌐 Problemas de Internet</button>
+
+        <button onclick="respuestaBoton('impresora')">🖨️ Problemas con la impresora</button>
+
+        <button onclick="respuestaBoton('office')">📄 Microsoft Office</button>
+
+        <button onclick="respuestaBoton('soporte')">📞 Contactar soporte técnico</button>
+
+    </div>
+    `;
+
+}
+function respuestaBoton(opcion){
+
+    document.getElementById("mensaje").value = opcion;
+
+    enviarMensaje();
+
+}
 function enviarMensaje() {
 
     let input = document.getElementById("mensaje");
@@ -35,6 +75,31 @@ historial.push({
 
     let respuestas = [];
 
+    // OPCIONES DEL MENÚ
+
+if(texto=="institucion"){
+
+    respuestas.push("🏫 El Telebachillerato Comunitario Núm. 29 ofrece educación media superior y cuenta con un servicio de soporte técnico para atender incidencias de los equipos de cómputo.");
+
+}
+
+if(texto=="equipo"){
+
+    respuestas.push("💻 ¿Qué problema presenta tu equipo?");
+    respuestas.push("Puedes escribir:");
+    respuestas.push("• Computadora lenta");
+    respuestas.push("• No enciende");
+    respuestas.push("• Sin sonido");
+
+}
+
+if(texto=="soporte"){
+
+    respuestas.push("📱 Puedes comunicarte con el área de soporte técnico mediante WhatsApp.");
+
+    respuestas.push("<a href='https://wa.me/527226958110?text=Hola,%20necesito%20ayuda%20con%20mi%20equipo%20de%20cómputo.' target='_blank'>Abrir WhatsApp</a>");
+
+}
     // SALUDOS
     if(texto.includes("hola") || texto.includes("buenas") || texto.includes("buenos dias") || texto.includes("buenas tardes")){
         respuestas.push("👋 Hola. Soy tu asistente de soporte técnico. ¿Cuál es el problema que presenta tu equipo?");
@@ -261,7 +326,11 @@ if(texto.includes("como") || texto.includes("cómo")){
         enviarMensaje();
     }
 
-    
+    window.onload=function(){
+
+    mostrarMenu();
+
+}
 });
 
 
