@@ -326,11 +326,12 @@ if(texto.includes("como") || texto.includes("cómo")){
         enviarMensaje();
     }
 
+});
     window.onload=function(){
 
     mostrarMenu();
 
 }
-});
+
 
 
