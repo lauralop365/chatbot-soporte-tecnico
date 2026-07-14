@@ -119,3 +119,40 @@ button:hover{
 .whatsapp img:hover{
     transform: scale(1.15);
 }
+.menu{
+
+display:flex;
+
+flex-direction:column;
+
+gap:10px;
+
+margin:15px 0;
+
+}
+
+.menu button{
+
+background:#0b8f5a;
+
+color:white;
+
+border:none;
+
+padding:12px;
+
+border-radius:10px;
+
+cursor:pointer;
+
+font-size:15px;
+
+transition:.3s;
+
+}
+
+.menu button:hover{
+
+background:#066c43;
+
+}
