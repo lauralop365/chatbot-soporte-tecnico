@@ -327,10 +327,9 @@ if(texto.includes("como") || texto.includes("cómo")){
     }
 
 });
-    window.onload=function(){
-
+  window.onload = function () {
+    console.log("Página cargada");
     mostrarMenu();
-
 }
 
 
