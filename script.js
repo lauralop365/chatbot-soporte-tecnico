@@ -21,8 +21,6 @@ function mostrarMenu(){
 
     <div class="menu">
 
-        <button onclick="respuestaBoton('institucion')">🏫 Conocer la institución</button>
-
         <button onclick="respuestaBoton('equipo')">💻 Problemas con mi equipo</button>
 
         <button onclick="respuestaBoton('internet')">🌐 Problemas de Internet</button>
@@ -77,11 +75,6 @@ historial.push({
 
     // OPCIONES DEL MENÚ
 
-if(texto=="institucion"){
-
-    respuestas.push("🏫 El Telebachillerato Comunitario Núm. 29 ofrece educación media superior y cuenta con un servicio de soporte técnico para atender incidencias de los equipos de cómputo.");
-
-}
 
 if(texto=="equipo"){
 
